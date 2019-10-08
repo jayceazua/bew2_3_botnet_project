@@ -22,4 +22,3 @@ Describe the requirements of this assignment.
 
 - [x] Public GitHub repo linked in
 - [ ] Deployed Botnet
-- [ ]
