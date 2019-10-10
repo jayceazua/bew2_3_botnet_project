@@ -5,8 +5,7 @@
 1. [Project Description](#project-description)
 2. [Project Requirements](#project-requirements)
 3. [Deliverables](#deliverables)
-4. [Usage](#usage)
-5. [Acknowledgements](#acknowledgements)
+4. [Acknowledgements](#acknowledgements)
 
 ## Project Description
 This project HTTP Flood; you can find out more [here](https://en.m.wikipedia.org/wiki/HTTP_Flood). 
@@ -21,17 +20,14 @@ To help would be pen-tester attack their own applications and friends' applicati
 
 ## Project Requirements
 
-Describe the requirements of this assignment.
+ 1. Clone the repo
+ 2. `<url link>` -> `www.domainName.com`
+ 3. `$ python ddos_attack.py <url link>
 
 ## Deliverables
 
 - [x] Public GitHub repo linked in
 - [x] Deployed Botnet
-
-## Usage
- 1. Clone the repo
- 2. `<url link>` -> `www.domainName.com`
- 3. `$ python ddos_attack.py <url link>
 
 
 ## Acknowledgements
