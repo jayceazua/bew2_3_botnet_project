@@ -23,6 +23,7 @@ To help would be pen-tester attack their own applications and friends' applicati
  1. Clone the repo
  2. `<url link>` -> `www.domainName.com`
  3. `$ python ddos_attack.py <url link>`
+ 4. 
 
 ## Deliverables
 
