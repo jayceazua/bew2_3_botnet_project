@@ -100,6 +100,3 @@ for i in range(num_requests):
 
 for current_thread in all_threads:
     current_thread.join()  # Make the main thread wait for the children threads
-
-
-if __name__ == "__main__":

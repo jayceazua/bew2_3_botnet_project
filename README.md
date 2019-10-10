@@ -23,7 +23,11 @@ To help would be pen-tester attack their own applications and friends' applicati
  1. Clone the repo
  2. `<url link>` -> `www.domainName.com`
  3. `$ python ddos_attack.py <url link>`
- 4. 
+ 
+ ## Additional Reinforcements
+ We have an ally of another set of farm machine powered by the script [Slow Loris](https://github.com/gkbrk/slowloris).
+ 1. `pip install slowloris`
+ 2. `slowloris <url link>`
 
 ## Deliverables
 
@@ -35,3 +39,4 @@ To help would be pen-tester attack their own applications and friends' applicati
  - https://www.cloudflare.com/learning/ddos/http-flood-ddos-attack/
  - https://en.m.wikipedia.org/wiki/HTTP_Flood
  - https://www.youtube.com/watch?v=kMsFlbPtSCI
+ - https://github.com/gkbrk/slowloris
