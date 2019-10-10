@@ -5,7 +5,8 @@
 1. [Project Description](#project-description)
 2. [Project Requirements](#project-requirements)
 3. [Deliverables](#deliverables)
-4. [Acknowledgements](#acknowledgements)
+4. [Additional Reinforcements](#additional-reinforcements)
+5. [Acknowledgements](#acknowledgements)
 
 ## Project Description
 This project HTTP Flood; you can find out more [here](https://en.m.wikipedia.org/wiki/HTTP_Flood). 
