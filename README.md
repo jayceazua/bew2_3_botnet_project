@@ -33,4 +33,4 @@ To help would be pen-tester attack their own applications and friends' applicati
 ## Acknowledgements
  - https://www.cloudflare.com/learning/ddos/http-flood-ddos-attack/
  - https://en.m.wikipedia.org/wiki/HTTP_Flood
- - https://www.youtube.com/watch?v=yjwbJ01av6g
+ - https://www.youtube.com/watch?v=kMsFlbPtSCI
