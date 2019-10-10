@@ -26,7 +26,7 @@ Describe the requirements of this assignment.
 ## Deliverables
 
 - [x] Public GitHub repo linked in
-- [ ] Deployed Botnet
+- [x] Deployed Botnet
 
 ## Usage
  1. Clone the repo
