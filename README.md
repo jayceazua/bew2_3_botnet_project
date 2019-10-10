@@ -1,4 +1,4 @@
-# Botnet Project
+# BEW 2.3 Web Security Project
 
 ### Table of Contents
 
@@ -30,3 +30,9 @@ Describe the requirements of this assignment.
 ## Usage
  1. Clone the repo
  2. `$ python ddos_attack.py <url link>
+
+
+## Acknowledgements
+ - https://www.cloudflare.com/learning/ddos/http-flood-ddos-attack/
+ - https://en.m.wikipedia.org/wiki/HTTP_Flood
+ - https://www.youtube.com/watch?v=yjwbJ01av6g
