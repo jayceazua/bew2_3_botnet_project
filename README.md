@@ -34,6 +34,7 @@ To help would be pen-tester attack their own applications and friends' applicati
 
 - [x] Public GitHub repo linked in
 - [x] Deployed Botnet
+- [x] Explanation Slides `->` [Slides](https://docs.google.com/presentation/d/19zjp22XG4P0rJ12RqzQGwkzexZcywV76lWrDYOGTcQw/edit?usp=sharing)
 
 ## Contributors
 
