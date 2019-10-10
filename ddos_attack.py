@@ -45,7 +45,7 @@ def print_status():
     thread_num_mutex.acquire(True)
 
     thread_num += 1
-    print("\n " + time.ctime().split(" ")[3] + " " + "[" + str(thread_num) + "] ...hold your horses... ")
+    print("\n " + "[" + str(thread_num) + "] ...hold your horses... ")
     thread_num_mutex.release()
 
 
