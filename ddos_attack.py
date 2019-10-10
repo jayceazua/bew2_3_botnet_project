@@ -22,7 +22,7 @@ elif len(sys.argv) == 4:
     num_requests = int(sys.argv[3])
 else:
     print("ERROR\n Usage: " +
-          sys.argv[0] + " < Hostname > < Port > < Number_of_Attacks >")
+          sys.argv[0] + " < Hostname > ")
     sys.exit(1)
 
 # Convert FQDN to IP
