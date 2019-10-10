@@ -13,10 +13,10 @@ num_requests = 0
 
 if len(sys.argv) == 2:
     port = 80
-    num_requests = 100000000
+    num_requests = 1000
 elif len(sys.argv) == 3:
     port = int(sys.argv[2])
-    num_requests = 100000000
+    num_requests = 1000
 elif len(sys.argv) == 4:
     port = int(sys.argv[2])
     num_requests = int(sys.argv[3])
@@ -52,10 +52,9 @@ def print_status():
 
 # Generate URL Path
 def generate_url_path():
-    """
-
-    """
+    """Generate the url path using letters digits and punctuation"""
     msg = str(string.ascii_letters + string.digits + string.punctuation)
+    # randomly create data from message created above
     data = "".join(random.sample(msg, 5))
     return data
 
