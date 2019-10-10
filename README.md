@@ -30,7 +30,8 @@ Describe the requirements of this assignment.
 
 ## Usage
  1. Clone the repo
- 2. `$ python ddos_attack.py <url link>
+ 2. `<url link>` -> `www.domainName.com`
+ 3. `$ python ddos_attack.py <url link>
 
 
 ## Acknowledgements
