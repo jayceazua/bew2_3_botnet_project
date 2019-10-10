@@ -17,7 +17,7 @@ Attack your friends' website, teach them a lesson on security.
 
 ### Why Are We Doing This?
 
-To help would be pen-tester atack their own applications and friends' applications. And educate on preventing a DDos attack.
+To help would be pen-tester attack their own applications and friends' applications. And educate on preventing a DDos attack.
 
 ## Project Requirements
 
