@@ -35,6 +35,10 @@ To help would be pen-tester attack their own applications and friends' applicati
 - [x] Public GitHub repo linked in
 - [x] Deployed Botnet
 
+## Contributors
+
+ - [Jayce Azua](https://linkedin.com/in/jayceazua)
+ - [Sukhrobjon Golibboev](https://github.com/sukhrobjon)
 
 ## Acknowledgements
  - https://www.cloudflare.com/learning/ddos/http-flood-ddos-attack/
