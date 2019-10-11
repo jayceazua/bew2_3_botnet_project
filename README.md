@@ -26,7 +26,7 @@ To help would be pen-tester attack their own applications and friends' applicati
  3. `$ python ddos_attack.py <url link>`
  
  ## Additional Reinforcements
- We have an ally of another set of farm machine powered by the script [Slow Loris](https://github.com/gkbrk/slowloris).
+ We have an ally of another set of a farm of machines powered by the script [Slow Loris](https://github.com/gkbrk/slowloris).
  1. `pip install slowloris`
  2. `slowloris <url link>`
 
